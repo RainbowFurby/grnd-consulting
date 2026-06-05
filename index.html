@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRND Consulting — AI Automation for SMEs</title>
+  <meta name="description" content="GRND Consulting helps small and mid-size businesses automate operations with AI-powered tools. Less manual work. More growth.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="GRND Consulting — home">GRND<span class="nav__logo-dot">.</span></a>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#why">Why GRND</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://calendly.com/grndconsulting" target="_blank" rel="noopener noreferrer" class="btn btn--primary nav__cta">Book a Call</a>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu" aria-modal="true">
+    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <ul role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#why">Why GRND</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://calendly.com/grndconsulting" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="margin-top:1.5rem;display:inline-flex;">Book a Free Call</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="hero" role="banner">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="container hero__content reveal">
+      <p class="hero__tag">AI Automation Consulting for SMEs</p>
+      <h1 class="hero__title">
+        Stop doing <span class="gradient-text">manually</span><br>what AI can do for you
+      </h1>
+      <p class="hero__sub">
+        We help small and mid-size businesses cut the repetitive work, connect their tools, and ship lightweight AI solutions — without the cost of a full dev team.
+      </p>
+      <div class="hero__actions">
+        <a href="https://calendly.com/grndconsulting" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a Free Discovery Call
+        </a>
+        <a href="#services" class="btn btn--ghost btn--lg">See What We Build</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+  <!-- PAIN POINTS -->
+  <section class="section" id="problems" aria-labelledby="problems-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__tag">The Problem</p>
+        <h2 class="section__title" id="problems-heading">Sound familiar?</h2>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card reveal" data-stagger="0">
+          <div class="pain-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Hours lost to repetitive tasks</h3>
+          <p>Copy-pasting between spreadsheets, manually updating records, sending the same emails — your team spends more time on process than on the actual work.</p>
+        </div>
+        <div class="pain-card reveal" data-stagger="1">
+          <div class="pain-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h2m2 0h2m2 0h2"/><path d="M7 12h10"/></svg>
+          </div>
+          <h3>Scattered tools, zero integration</h3>
+          <p>Your CRM doesn't talk to your invoicing. Your project tracker lives in a spreadsheet. Nothing connects, so context gets lost between every handoff.</p>
+        </div>
+        <div class="pain-card reveal" data-stagger="2">
+          <div class="pain-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Growing pains without a dev team</h3>
+          <p>You need custom solutions but can't justify a full engineering hire. Off-the-shelf SaaS almost fits — but "almost" means workarounds everywhere.</p>
+        </div>
+        <div class="pain-card reveal" data-stagger="3">
+          <div class="pain-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+          </div>
+          <h3>AI hype, no clear starting point</h3>
+          <p>Everyone says "use AI" — nobody shows you where it actually fits your business. You need someone who understands operations, not just the technology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section section--alt" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__tag">What We Do</p>
+        <h2 class="section__title" id="services-heading">Services built for <span class="gradient-text">real businesses</span></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal" data-stagger="0">
+          <div class="service-card__number" aria-hidden="true">01</div>
+          <h3>AI Workflow Automation</h3>
+          <p>We identify your most time-consuming manual processes and automate them — from data entry and document processing to customer communications and reporting.</p>
+          <ul class="service-card__list" aria-label="AI Workflow Automation includes">
+            <li>Email &amp; document automation</li>
+            <li>Data extraction &amp; entry</li>
+            <li>Automated reporting dashboards</li>
+            <li>AI-assisted customer responses</li>
+          </ul>
+        </div>
+        <div class="service-card reveal" data-stagger="1">
+          <div class="service-card__number" aria-hidden="true">02</div>
+          <h3>Custom Tool Building</h3>
+          <p>Off-the-shelf doesn't fit? We build lightweight, tailored tools that slot into your existing workflow — dashboards, admin portals, client-facing apps.</p>
+          <ul class="service-card__list" aria-label="Custom Tool Building includes">
+            <li>Internal operations tools</li>
+            <li>Client portals &amp; dashboards</li>
+            <li>Integration middleware</li>
+            <li>Mobile-friendly web apps</li>
+          </ul>
+        </div>
+        <div class="service-card reveal" data-stagger="2">
+          <div class="service-card__number" aria-hidden="true">03</div>
+          <h3>Process Audit &amp; Strategy</h3>
+          <p>Before building anything, we map your operations end-to-end. You get a clear roadmap of what to automate first for maximum ROI — no wasted spend.</p>
+          <ul class="service-card__list" aria-label="Process Audit and Strategy includes">
+            <li>Operations workflow mapping</li>
+            <li>Automation opportunity scoring</li>
+            <li>Technology stack advisory</li>
+            <li>Implementation roadmap</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__tag">The Process</p>
+        <h2 class="section__title" id="how-heading">Three steps to <span class="gradient-text">less busywork</span></h2>
+      </div>
+      <div class="steps" role="list">
+        <div class="step reveal" role="listitem">
+          <div class="step__line" aria-hidden="true"></div>
+          <div class="step__dot" aria-hidden="true"></div>
+          <div class="step__content">
+            <span class="step__label">Step 1</span>
+            <h3>Audit</h3>
+            <p>We map your current workflows and pinpoint the biggest time sinks. You'll see exactly where automation has the highest return — no guesswork.</p>
+          </div>
+        </div>
+        <div class="step reveal" role="listitem">
+          <div class="step__line" aria-hidden="true"></div>
+          <div class="step__dot" aria-hidden="true"></div>
+          <div class="step__content">
+            <span class="step__label">Step 2</span>
+            <h3>Build</h3>
+            <p>We design and ship the solution — whether that's an AI automation, a custom tool, or an integration between your existing systems. Fast, iterative, transparent.</p>
+          </div>
+        </div>
+        <div class="step reveal" role="listitem">
+          <div class="step__line" aria-hidden="true"></div>
+          <div class="step__dot" aria-hidden="true"></div>
+          <div class="step__content">
+            <span class="step__label">Step 3</span>
+            <h3>Launch &amp; Support</h3>
+            <p>We deploy, train your team, and stick around to make sure it works in the real world. Ongoing support so the automation keeps delivering value.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY GRND -->
+  <section class="section section--alt" id="why" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__tag">Why Us</p>
+        <h2 class="section__title" id="why-heading">A builder, not just <span class="gradient-text">a consultant</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal" data-stagger="0">
+          <h3>Product manager who codes</h3>
+          <p>I don't just advise — I build. With a product management background and hands-on development experience, I understand both the business problem and the technical solution.</p>
+        </div>
+        <div class="why-card reveal" data-stagger="1">
+          <h3>Built for SMEs, not enterprises</h3>
+          <p>No bloated proposals or six-month timelines. You get lean, fast solutions sized for your business — not scaled-down enterprise packages with enterprise pricing.</p>
+        </div>
+        <div class="why-card reveal" data-stagger="2">
+          <h3>Pragmatic, not hype-driven</h3>
+          <p>AI isn't the answer to everything. I'll tell you where it fits and where a simpler tool is the better move. Honest advice, always.</p>
+        </div>
+        <div class="why-card reveal" data-stagger="3">
+          <h3>You own everything</h3>
+          <p>No vendor lock-in, no proprietary platforms. Everything we build is yours — the code, the data, the documentation. Walk away any time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__tag">Get Started</p>
+        <h2 class="section__title" id="contact-heading">Let's find your <span class="gradient-text">quick wins</span></h2>
+        <p class="contact__lead">Free 30-minute discovery call. No pitch, no pressure — just an honest look at where automation can save your team the most time.</p>
+      </div>
+
+      <div class="contact-wrapper reveal">
+
+        <!-- Book a call -->
+        <div class="contact-book">
+          <h3>Book a call directly</h3>
+          <p>Pick a time that works. We'll walk through your operations and identify exactly where to start.</p>
+          <a href="https://calendly.com/grndconsulting" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg btn--cal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Schedule a Discovery Call
+          </a>
+          <ul class="contact-book__meta" aria-label="Call details">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>30 minutes</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <span>Video call</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Free — no commitment</span>
+            </li>
+          </ul>
+          <div class="contact-book__email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:hello@grndconsulting.com">hello@grndconsulting.com</a>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="contact-divider" aria-hidden="true">
+          <span>or</span>
+        </div>
+
+        <!-- Contact form -->
+        <form class="contact-form" id="contactForm" novalidate aria-label="Send a message">
+          <div id="formStatus" role="status" aria-live="polite" aria-atomic="true" class="form-status"></div>
+          <div class="form-group">
+            <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" aria-required="true" aria-describedby="name-error">
+            <span class="form-error" id="name-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Work email <span class="required" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email" aria-required="true" aria-describedby="email-error">
+            <span class="form-error" id="email-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">What's your biggest operational headache? <span class="required" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about the manual work you'd love to eliminate..." required aria-required="true" aria-describedby="message-error"></textarea>
+            <span class="form-error" id="message-error" role="alert"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--full">Send Message</button>
+          <p class="form-note">No spam. We'll only use this to follow up about your inquiry.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#hero" class="nav__logo" aria-label="GRND Consulting — back to top">GRND<span class="nav__logo-dot">.</span></a>
+        <p>AI automation consulting for small and mid-size businesses.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a href="#services">Services</a>
+        <a href="#how">Process</a>
+        <a href="#why">Why GRND</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer__bottom">
+        <p>&copy; <span id="footerYear">2025</span> GRND Consulting. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
