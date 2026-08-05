@@ -1,0 +1,53 @@
+{
+  "facebook_groups": [
+    "https://www.facebook.com/groups/REPLACE_WITH_GROUP_ID"
+  ],
+
+  "min_keyword_matches": 1,
+  "require_weekend": false,
+  "require_location": false,
+  "drop_fnb_excluded": true,
+  "drop_past_events": true,
+  "drop_over_budget": false,
+
+  "min_score": 8,
+  "good_score": 12,
+  "hot_score": 17,
+  "max_booth_fee": 400,
+
+  "priority_venues": [
+    "Sunway Pyramid",
+    "Mid Valley",
+    "The Gardens Mall",
+    "Publika",
+    "The Starling",
+    "Empire City",
+    "Pavilion KL",
+    "Pavilion Bukit Jalil",
+    "Suria KLCC",
+    "1 Utama",
+    "The Curve",
+    "Sunway Velocity",
+    "MyTown",
+    "Bangsar Shopping Centre",
+    "Mont Kiara",
+    "Setia City Mall",
+    "Paradigm Mall",
+    "Tropicana Gardens",
+    "REXKL",
+    "GMBB",
+    "Sentul Depot"
+  ],
+  "extra_venues": [],
+  "extra_areas": [],
+
+  "posts_per_group": 25,
+  "scroll_rounds": 5,
+  "scroll_pause_seconds": 2.0,
+  "headless": true,
+  "delay_between_groups_seconds": 30,
+  "max_alerts_per_run": 8,
+
+  "seen_post_retention_days": 60,
+  "log_level": "INFO"
+}

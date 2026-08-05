@@ -1,0 +1,15 @@
+# Secrets and credentials — never commit these
+.env
+fb_session.json
+
+# Runtime state
+data/seen_posts.db
+data/bot.log
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/

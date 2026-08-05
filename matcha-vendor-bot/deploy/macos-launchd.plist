@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  macOS scheduler for the vendor bot.
+
+  Why launchd and not cron: if the laptop is asleep at the scheduled minute,
+  cron silently skips that run. launchd with StartInterval fires as soon as
+  the machine wakes, so closing your lid between checks costs you one late
+  run rather than a missed day.
+
+  INSTALL
+    1. Edit the two paths marked REPLACE_ME below.
+    2. cp deploy/macos-launchd.plist ~/Library/LaunchAgents/com.everydaymatcha.vendorbot.plist
+    3. launchctl load ~/Library/LaunchAgents/com.everydaymatcha.vendorbot.plist
+
+  CHECK IT
+    launchctl list | grep vendorbot
+    tail -f /path/to/matcha-vendor-bot/data/bot.log
+
+  STOP
+    launchctl unload ~/Library/LaunchAgents/com.everydaymatcha.vendorbot.plist
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.everydaymatcha.vendorbot</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <!-- REPLACE_ME: absolute path to deploy/run-bot.sh -->
+        <string>/Users/YOUR_NAME/matcha-vendor-bot/deploy/run-bot.sh</string>
+    </array>
+
+    <!-- REPLACE_ME: absolute path to the project folder -->
+    <key>WorkingDirectory</key>
+    <string>/Users/YOUR_NAME/matcha-vendor-bot</string>
+
+    <!-- Every 90 minutes. Do not go much below this: frequent, clockwork
+         polling of Facebook from one account is what gets sessions flagged. -->
+    <key>StartInterval</key>
+    <integer>5400</integer>
+
+    <!-- Catch up on a missed run after the lid opens. -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/YOUR_NAME/matcha-vendor-bot/data/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/YOUR_NAME/matcha-vendor-bot/data/launchd.err.log</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>
