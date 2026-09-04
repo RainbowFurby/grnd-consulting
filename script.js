@@ -110,6 +110,205 @@
     });
   });
 
+  // --- Hero background visuals: converging data streams (skill: §7 animation) ---
+  // Bezier paths flow in from both edges toward the centre of the hero, with
+  // particles riding along them. Clicking the hero sends out a shockwave that
+  // pushes nearby particles off their path.
+  (function initHeroFlow() {
+    var canvas = document.getElementById('heroFlow');
+    if (!canvas || !canvas.getContext) return;
+
+    var hero = document.getElementById('hero');
+    var ctx  = canvas.getContext('2d');
+
+    var width = 0, height = 0;
+    var paths = [];
+    var ripples = [];
+    var rafId = null;
+    var running = false;
+
+    // Brand-matched stream colours (accent-1 purple → accent-2 blue)
+    var LINE_COLOR = 'rgba(140, 124, 255, 0.34)';
+    var DOT_INNER  = 'rgba(180, 170, 255, 0.95)';
+    var DOT_OUTER  = 'rgba(59, 130, 246, 0.5)';
+
+    function pathCount() {
+      // Fewer streams on small screens — keeps paint cost down on mobile.
+      if (width < 640) return 26;
+      if (width < 1024) return 44;
+      return 64;
+    }
+
+    function buildPaths() {
+      paths = [];
+      var count = pathCount();
+      for (var i = 0; i < count; i++) {
+        paths.push({
+          isLeft: i % 2 === 0,
+          startY: (i / count) * height * 1.4 - height * 0.2,
+          t: Math.random(),
+          speed: 0.0014 + Math.random() * 0.0018
+        });
+      }
+    }
+
+    function resize() {
+      var rect = hero.getBoundingClientRect();
+      var dpr  = Math.min(window.devicePixelRatio || 1, 2);
+
+      width  = Math.max(rect.width, 1);
+      height = Math.max(rect.height, 1);
+
+      canvas.width  = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      // setTransform (not scale) — scale would compound on every resize.
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      buildPaths();
+    }
+
+    function controlPoints(path) {
+      var cx = width / 2;
+      var cy = height / 2;
+      return {
+        p0: { x: path.isLeft ? 0 : width,            y: path.startY },
+        p1: { x: path.isLeft ? cx * 0.5 : width - cx * 0.5, y: path.startY },
+        p2: { x: path.isLeft ? cx * 0.8 : width - cx * 0.8, y: cy },
+        p3: { x: cx, y: cy }
+      };
+    }
+
+    function bezierPoint(t, p0, p1, p2, p3) {
+      var u = 1 - t;
+      return {
+        x: u*u*u * p0.x + 3*u*u*t * p1.x + 3*u*t*t * p2.x + t*t*t * p3.x,
+        y: u*u*u * p0.y + 3*u*u*t * p1.y + 3*u*t*t * p2.y + t*t*t * p3.y
+      };
+    }
+
+    function draw(advance) {
+      ctx.clearRect(0, 0, width, height);
+
+      if (advance) {
+        for (var r = ripples.length - 1; r >= 0; r--) {
+          ripples[r].radius += 14;
+          ripples[r].life   -= 0.015;
+          if (ripples[r].life <= 0) ripples.splice(r, 1);
+        }
+      }
+
+      for (var i = 0; i < paths.length; i++) {
+        var path = paths[i];
+        var cp = controlPoints(path);
+
+        // The stream itself
+        ctx.beginPath();
+        ctx.moveTo(cp.p0.x, cp.p0.y);
+        ctx.bezierCurveTo(cp.p1.x, cp.p1.y, cp.p2.x, cp.p2.y, cp.p3.x, cp.p3.y);
+        ctx.strokeStyle = LINE_COLOR;
+        ctx.lineWidth = 1.1;
+        ctx.setLineDash([2, 6]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        if (advance) {
+          path.t += path.speed;
+          if (path.t > 1) {
+            path.t = 0;
+            // Drift the entry point so the pattern never fully repeats
+            path.startY += (Math.random() - 0.5) * 10;
+          }
+        }
+
+        var pos = bezierPoint(path.t, cp.p0, cp.p1, cp.p2, cp.p3);
+
+        // Shockwave displacement
+        for (var e = 0; e < ripples.length; e++) {
+          var exp = ripples[e];
+          var dx = pos.x - exp.x;
+          var dy = pos.y - exp.y;
+          var dist = Math.hypot(dx, dy) || 1;
+          var offset = Math.abs(dist - exp.radius);
+          if (offset < 120) {
+            var force = (1 - offset / 120) * exp.life * 80;
+            pos.x += (dx / dist) * force;
+            pos.y += (dy / dist) * force;
+          }
+        }
+
+        // Particle: soft halo + bright core
+        var fade = Math.sin(path.t * Math.PI); // fade in/out at both ends
+        ctx.globalAlpha = fade;
+        ctx.fillStyle = DOT_OUTER;
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = DOT_INNER;
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, 1.2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    function frame() {
+      draw(true);
+      rafId = window.requestAnimationFrame(frame);
+    }
+
+    function start() {
+      if (running || prefersReducedMotion) return;
+      running = true;
+      rafId = window.requestAnimationFrame(frame);
+    }
+
+    function stop() {
+      running = false;
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    // Click shockwave — hero only, coordinates relative to the canvas
+    hero.addEventListener('click', function (e) {
+      if (prefersReducedMotion) return;
+      var rect = canvas.getBoundingClientRect();
+      ripples.push({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+        radius: 0,
+        life: 1
+      });
+    });
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(function () {
+        resize();
+        if (!running) draw(false);
+      }, 150);
+    });
+
+    // Don't burn frames while the hero is scrolled away or the tab is hidden
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries[0].isIntersecting ? start() : stop();
+      }, { threshold: 0 }).observe(hero);
+    } else {
+      start();
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      document.hidden ? stop() : start();
+    });
+
+    resize();
+    // Reduced motion still gets the artwork — just frozen, never animating.
+    if (prefersReducedMotion) draw(false);
+  })();
+
   // --- Contact form — inline validation (skill: §8 inline-validation) ---
   var form = document.getElementById('contactForm');
   if (!form) return;
