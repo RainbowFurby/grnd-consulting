@@ -1,0 +1,14 @@
+{
+  "name": "grnd-consulting",
+  "version": "1.0.0",
+  "description": "GRND Consulting - AI Automation for SMEs",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
