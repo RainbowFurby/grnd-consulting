@@ -8,13 +8,12 @@
   'use strict';
 
   // ============================================================
-  // CONTACT FORM DELIVERY — paste your Web3Forms access key here.
-  // Get one free in ~30s at https://web3forms.com (enter
-  // notification@staygrnd.xyz, they email you the key). Submissions
-  // are then delivered to that inbox. Until a key is set, the form
-  // falls back to WhatsApp/email so visitors are never stranded.
+  // CONTACT FORM DELIVERY — Web3Forms access key.
+  // Submissions are emailed to notification@staygrnd.xyz.
+  // This key is public by design (it ships in client-side JS to every
+  // visitor). Rotate it at https://web3forms.com if it ever gets abused.
   // ============================================================
-  var WEB3FORMS_ACCESS_KEY = 'YOUR-ACCESS-KEY-HERE';
+  var WEB3FORMS_ACCESS_KEY = 'df93e9c5-16ce-4ac6-b250-0b9e73d2c847';
 
   var WHATSAPP_URL = 'https://wa.me/60126274178';
   var CONTACT_EMAIL = 'notification@staygrnd.xyz';
@@ -446,8 +445,16 @@
     btn.disabled = true;
     btn.setAttribute('aria-busy', 'true');
 
+    // Give up after 15s so a hung connection can't leave the button
+    // stuck on "Sending…" with no way forward.
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timeout = window.setTimeout(function () {
+      if (controller) controller.abort();
+    }, 15000);
+
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
+      signal: controller ? controller.signal : undefined,
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -481,6 +488,7 @@
           '+60 12-627 4178 or email ' + CONTACT_EMAIL + ' instead.');
       })
       .then(function () {
+        window.clearTimeout(timeout);
         btn.textContent = originalText;
         btn.disabled = false;
         btn.removeAttribute('aria-busy');
