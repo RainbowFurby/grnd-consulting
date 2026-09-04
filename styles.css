@@ -309,6 +309,15 @@ img { max-width: 100%; display: block; }
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
 }
 
+.form-honeypot {
+  position: absolute !important;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .hero__flow {
   position: absolute;
   inset: 0;

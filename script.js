@@ -7,6 +7,18 @@
 (function () {
   'use strict';
 
+  // ============================================================
+  // CONTACT FORM DELIVERY — paste your Web3Forms access key here.
+  // Get one free in ~30s at https://web3forms.com (enter
+  // notification@staygrnd.xyz, they email you the key). Submissions
+  // are then delivered to that inbox. Until a key is set, the form
+  // falls back to WhatsApp/email so visitors are never stranded.
+  // ============================================================
+  var WEB3FORMS_ACCESS_KEY = 'YOUR-ACCESS-KEY-HERE';
+
+  var WHATSAPP_URL = 'https://wa.me/60126274178';
+  var CONTACT_EMAIL = 'notification@staygrnd.xyz';
+
   // --- Respect prefers-reduced-motion (skill: §2 reduced-motion) ---
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -380,10 +392,27 @@
     }, true);
   }
 
+  function resetFields() {
+    form.reset();
+    Object.values(fields).forEach(function (field) {
+      field.el.classList.remove('invalid');
+      field.el.removeAttribute('aria-invalid');
+      field.error.textContent = '';
+    });
+  }
+
+  function showStatus(kind, message) {
+    formStatus.className = 'form-status ' + kind;
+    formStatus.textContent = message;
+    formStatus.scrollIntoView({
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      block: 'nearest'
+    });
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Clear status
     formStatus.className = 'form-status';
     formStatus.textContent = '';
 
@@ -394,27 +423,68 @@
       return;
     }
 
+    // Honeypot tripped — silently accept so the bot doesn't retry.
+    var honeypot = document.getElementById('botcheck');
+    if (honeypot && honeypot.checked) {
+      showStatus('success', "Message sent! We'll be in touch within one business day.");
+      resetFields();
+      return;
+    }
+
     var btn = form.querySelector('button[type="submit"]');
     var originalText = btn.textContent;
-    btn.textContent = 'Sending…';
+
+    // No key configured yet — don't pretend the message was sent.
+    if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'YOUR-ACCESS-KEY-HERE') {
+      showStatus('error',
+        'The contact form isn\u2019t connected yet. Please WhatsApp us at ' +
+        '+60 12-627 4178 or email ' + CONTACT_EMAIL + ' \u2014 we\u2019ll reply the same day.');
+      return;
+    }
+
+    btn.textContent = 'Sending\u2026';
     btn.disabled = true;
+    btn.setAttribute('aria-busy', 'true');
 
-    // Simulate async submit — replace with real endpoint when ready
-    setTimeout(function () {
-      btn.textContent = originalText;
-      btn.disabled = false;
-
-      formStatus.className = 'form-status success';
-      formStatus.textContent = "Message sent! We'll be in touch within one business day.";
-      formStatus.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest' });
-
-      form.reset();
-      Object.values(fields).forEach(function (field) {
-        field.el.classList.remove('invalid');
-        field.el.removeAttribute('aria-invalid');
-        field.error.textContent = '';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: 'New enquiry from grndconsulting.com',
+        from_name: 'GRND Consulting website',
+        name: fields.name.el.value.trim(),
+        email: fields.email.el.value.trim(),
+        message: fields.message.el.value.trim(),
+        // Replies go straight to the person who filled the form in
+        replyto: fields.email.el.value.trim()
+      })
+    })
+      .then(function (res) {
+        return res.json().then(function (data) {
+          return { ok: res.ok, data: data };
+        });
+      })
+      .then(function (result) {
+        if (!result.ok || !result.data.success) {
+          throw new Error(result.data && result.data.message || 'Submission failed');
+        }
+        showStatus('success', "Message sent! We'll be in touch within one business day.");
+        resetFields();
+      })
+      .catch(function () {
+        showStatus('error',
+          'Something went wrong sending that. Please WhatsApp us at ' +
+          '+60 12-627 4178 or email ' + CONTACT_EMAIL + ' instead.');
+      })
+      .then(function () {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.removeAttribute('aria-busy');
       });
-    }, 1200);
   });
 
 })();
