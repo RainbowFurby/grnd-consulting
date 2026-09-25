@@ -437,7 +437,7 @@
     if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'YOUR-ACCESS-KEY-HERE') {
       showStatus('error',
         'The contact form isn\u2019t connected yet. Please WhatsApp me at ' +
-        '+60 12-627 4178 or email ' + CONTACT_EMAIL + ' \u2014 I\u2019ll reply the same day.');
+        '+60 12-627 4178 or email ' + CONTACT_EMAIL + '. I\u2019ll reply the same day.');
       return;
     }
 
