@@ -425,7 +425,7 @@
     // Honeypot tripped — silently accept so the bot doesn't retry.
     var honeypot = document.getElementById('botcheck');
     if (honeypot && honeypot.checked) {
-      showStatus('success', "Message sent! We'll be in touch within one business day.");
+      showStatus('success', "Message sent! I'll be in touch within one business day.");
       resetFields();
       return;
     }
@@ -436,8 +436,8 @@
     // No key configured yet — don't pretend the message was sent.
     if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'YOUR-ACCESS-KEY-HERE') {
       showStatus('error',
-        'The contact form isn\u2019t connected yet. Please WhatsApp us at ' +
-        '+60 12-627 4178 or email ' + CONTACT_EMAIL + ' \u2014 we\u2019ll reply the same day.');
+        'The contact form isn\u2019t connected yet. Please WhatsApp me at ' +
+        '+60 12-627 4178 or email ' + CONTACT_EMAIL + ' \u2014 I\u2019ll reply the same day.');
       return;
     }
 
@@ -461,7 +461,7 @@
       },
       body: JSON.stringify({
         access_key: WEB3FORMS_ACCESS_KEY,
-        subject: 'New enquiry from grndconsulting.com',
+        subject: 'New enquiry from staygrnd.xyz',
         from_name: 'GRND Consulting website',
         name: fields.name.el.value.trim(),
         email: fields.email.el.value.trim(),
@@ -479,12 +479,12 @@
         if (!result.ok || !result.data.success) {
           throw new Error(result.data && result.data.message || 'Submission failed');
         }
-        showStatus('success', "Message sent! We'll be in touch within one business day.");
+        showStatus('success', "Message sent! I'll be in touch within one business day.");
         resetFields();
       })
       .catch(function () {
         showStatus('error',
-          'Something went wrong sending that. Please WhatsApp us at ' +
+          'Something went wrong sending that. Please WhatsApp me at ' +
           '+60 12-627 4178 or email ' + CONTACT_EMAIL + ' instead.');
       })
       .then(function () {
