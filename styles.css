@@ -12,17 +12,18 @@
 }
 
 :root {
-  /* Core palette — Dark Mode OLED */
-  --bg:            #000000;
-  --bg-alt:        #050505;
-  --surface:       #0a0a0a;
-  --border:        rgba(255, 255, 255, 0.08);
-  --border-hover:  rgba(255, 255, 255, 0.16);
+  /* Core palette — Ink ramp (tinted toward night/technical, not flat OLED) */
+  --bg:            #07080d;
+  --bg-alt:        #0b0d14;
+  --surface:       #11141c;
+  --raised:        #1a1e28;
+  --border:        rgba(238, 240, 245, 0.08);
+  --border-hover:  rgba(238, 240, 245, 0.16);
 
   /* Text */
-  --text:          #ffffff;
-  --text-muted:    #888888;
-  --text-dim:      #444444;
+  --text:          #eef0f5;
+  --text-muted:    #a3a9b8;
+  --text-dim:      #7a8296;
 
   /* Accent — one quiet blue, used sparingly */
   --accent:        #4c8dff;
@@ -110,7 +111,7 @@ img { max-width: 100%; display: block; }
   padding: 10px 24px;
 }
 
-.btn--primary:hover { background: #d4d4d4; transform: translateY(-1px); }
+.btn--primary:hover { background: #d8dae1; transform: translateY(-1px); }
 .btn--primary:active { transform: translateY(0); }
 
 .btn--ghost {
@@ -322,6 +323,9 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 28px;
+  box-shadow:
+    0 24px 60px -24px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .quote-panel__head {
@@ -446,6 +450,7 @@ img { max-width: 100%; display: block; }
 .pain-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-2px);
+  box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.5);
 }
 
 .pain-card__icon {
@@ -496,6 +501,7 @@ img { max-width: 100%; display: block; }
 .service-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-2px);
+  box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.5);
 }
 .service-card:hover::before { opacity: 1; }
 
@@ -572,6 +578,7 @@ img { max-width: 100%; display: block; }
 .result-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-2px);
+  box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.5);
 }
 
 .result-card__tag {
@@ -700,6 +707,7 @@ img { max-width: 100%; display: block; }
 .why-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-2px);
+  box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.5);
 }
 
 .why-card h3 {
