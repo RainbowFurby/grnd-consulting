@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -48,23 +48,43 @@
 
   <!-- HERO -->
   <header class="hero" id="hero" role="banner">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <div class="hero__grid" aria-hidden="true"></div>
-    <canvas class="hero__flow" id="heroFlow" aria-hidden="true"></canvas>
-    <div class="container hero__content reveal">
-      <p class="hero__tag">AI Automation Consulting for SMEs in Malaysia</p>
-      <h1 class="hero__title">
-        Stop doing <span class="gradient-text">manually</span><br>what AI can do for you
-      </h1>
-      <p class="hero__sub">
-        I help small and mid-size businesses cut the repetitive work, connect their tools, and ship lightweight AI solutions without the cost of a full dev team.
-      </p>
-      <div class="hero__actions">
-        <a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.886-9.885 9.886m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/></svg>
-          Chat on WhatsApp
-        </a>
-        <a href="#services" class="btn btn--ghost btn--lg">See What I Build</a>
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <p class="hero__tag">AI Automation Consulting for SMEs in Malaysia</p>
+        <h1 class="hero__title">
+          Stop doing manually what AI can do for you
+        </h1>
+        <p class="hero__sub">
+          I help small and mid-size businesses cut the repetitive work, connect their tools, and ship lightweight AI solutions without the cost of a full dev team.
+        </p>
+        <div class="hero__actions">
+          <a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.886-9.885 9.886m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a href="#services" class="btn btn--ghost btn--lg">See What I Build</a>
+        </div>
+      </div>
+      <div class="hero__visual reveal" data-stagger="1" aria-hidden="true">
+        <div class="quote-panel">
+          <div class="quote-panel__head">
+            <span class="quote-panel__title">Quotation</span>
+            <span class="quote-panel__meta">Q-1042</span>
+          </div>
+          <ul class="quote-panel__items">
+            <li><span>Smart lighting hub, living room</span><span class="quote-panel__num">RM 480</span></li>
+            <li><span>Motion sensor × 3</span><span class="quote-panel__num">RM 210</span></li>
+            <li><span>Installation &amp; setup</span><span class="quote-panel__num">RM 150</span></li>
+          </ul>
+          <div class="quote-panel__total">
+            <span>Total</span>
+            <span class="quote-panel__num quote-panel__num--accent">RM 840</span>
+          </div>
+          <div class="quote-panel__footer">
+            <span class="quote-panel__dot"></span>
+            Generated in 43 seconds
+          </div>
+        </div>
       </div>
     </div>
   </header>
