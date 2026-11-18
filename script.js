@@ -74,20 +74,20 @@
     }
   });
 
-  // --- Scroll reveal with stagger (skill: §7 stagger-sequence) ---
-  var reveals = document.querySelectorAll('.reveal');
+  // --- One reveal, on the hero visual only (Hallmark: one reveal a page) ---
+  var reveals = document.querySelectorAll('[data-reveal]');
 
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('is-in');
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.12, rootMargin: '0px 0px -10% 0px' }
     );
 
     reveals.forEach(function (el) {
@@ -96,7 +96,7 @@
   } else {
     // Reduced motion or no IO support — show everything immediately
     reveals.forEach(function (el) {
-      el.classList.add('visible');
+      el.classList.add('is-in');
     });
   }
 

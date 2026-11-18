@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +8,24 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600&family=Wix+Madefor+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <a class="skip" href="#main">Skip to content</a>
+
   <!-- NAV -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
+    <div class="container nav__inner">
       <a href="#hero" class="nav__logo" aria-label="GRND Consulting home">GRND<span class="nav__logo-dot">.</span></a>
       <ul class="nav__links" id="navLinks" role="list">
         <li><a href="#services">Services</a></li>
-        <li><a href="#how">How It Works</a></li>
+        <li><a href="#how">How it works</a></li>
         <li><a href="#why">Why GRND</a></li>
         <li><a href="blog/index.html">Insights</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn--primary nav__cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.886-9.885 9.886m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/></svg> WhatsApp Me</a>
+      <a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn nav__cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.886-9.885 9.886m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/></svg> WhatsApp me</a>
       <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
@@ -37,135 +39,112 @@
     </button>
     <ul role="list">
       <li><a href="#services">Services</a></li>
-      <li><a href="#how">How It Works</a></li>
+      <li><a href="#how">How it works</a></li>
       <li><a href="#why">Why GRND</a></li>
       <li><a href="blog/index.html">Insights</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="margin-top:1.5rem;display:inline-flex;gap:8px;align-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.886-9.885 9.886m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/></svg> WhatsApp Me</a></li>
-      <li><a href="mailto:notification@staygrnd.xyz" style="font-size:0.95rem;">notification@staygrnd.xyz</a></li>
+      <li><a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn mobile-menu__cta">WhatsApp me</a></li>
+      <li><a href="mailto:notification@staygrnd.xyz" class="mobile-menu__email">notification@staygrnd.xyz</a></li>
     </ul>
   </div>
 
   <!-- HERO -->
   <header class="hero" id="hero" role="banner">
+    <figure class="hero__photo" data-slot="hero" data-alt="A valley of fog under hills at sunset">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Vallee-brouillard.jpg/2560px-Vallee-brouillard.jpg"
+           srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Vallee-brouillard.jpg/1280px-Vallee-brouillard.jpg 1280w, https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Vallee-brouillard.jpg/1920px-Vallee-brouillard.jpg 1920w, https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Vallee-brouillard.jpg/2560px-Vallee-brouillard.jpg 2560w"
+           sizes="100vw" width="4210" height="2750" alt="" style="object-position: 50% 42%" fetchpriority="high">
+    </figure>
+    <div class="hero__scrim" aria-hidden="true"></div>
     <div class="container hero__inner">
-      <div class="hero__content reveal">
-        <p class="hero__tag">AI Automation Consulting for SMEs in Malaysia</p>
-        <h1 class="hero__title">
-          Stop doing manually what AI can do for you
-        </h1>
-        <p class="hero__sub">
-          I help small and mid-size businesses cut the repetitive work, connect their tools, and ship lightweight AI solutions without the cost of a full dev team.
-        </p>
+      <div class="hero__text">
+        <h1>A quote back in minutes, not days.</h1>
+        <p class="lead">Malaysian SMEs message me on WhatsApp instead of hiring a dev team.</p>
         <div class="hero__actions">
-          <a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.886-9.885 9.886m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/></svg>
-            Chat on WhatsApp
-          </a>
-          <a href="#services" class="btn btn--ghost btn--lg">See What I Build</a>
+          <a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn">Chat on WhatsApp</a>
+          <a href="#services" class="btn btn--quiet">See what I build</a>
         </div>
       </div>
-      <div class="hero__visual reveal" data-stagger="1" aria-hidden="true">
-        <div class="quote-panel">
-          <div class="quote-panel__head">
-            <span class="quote-panel__title">Quotation</span>
-            <span class="quote-panel__meta">Q-1042</span>
-          </div>
-          <ul class="quote-panel__items">
-            <li><span>Smart lighting hub, living room</span><span class="quote-panel__num">RM 480</span></li>
-            <li><span>Motion sensor × 3</span><span class="quote-panel__num">RM 210</span></li>
-            <li><span>Installation &amp; setup</span><span class="quote-panel__num">RM 150</span></li>
-          </ul>
-          <div class="quote-panel__total">
-            <span>Total</span>
-            <span class="quote-panel__num quote-panel__num--accent">RM 840</span>
-          </div>
-          <div class="quote-panel__footer">
-            <span class="quote-panel__dot"></span>
-            Generated in 43 seconds
-          </div>
+      <div class="hero__visual glass" data-reveal style="--i:1">
+        <div class="quote__head">
+          <span>Quotation</span>
+          <span class="quote__meta">Today</span>
         </div>
+        <ul class="quote__rows">
+          <li><span>Smart lighting hub, living room</span><span class="num">RM 480</span></li>
+          <li><span>Motion sensor × 3</span><span class="num">RM 210</span></li>
+          <li><span>Door sensor × 2</span><span class="num">RM 140</span></li>
+          <li><span>Installation and setup</span><span class="num">RM 150</span></li>
+        </ul>
+        <div class="quote__total">
+          <span>Total</span>
+          <span class="num">RM 980</span>
+        </div>
+        <p class="quote__strip">Approved on WhatsApp. Sent automatically.</p>
       </div>
     </div>
   </header>
 
   <main id="main">
 
-  <!-- PAIN POINTS -->
-  <section class="section" id="problems" aria-labelledby="problems-heading">
+  <!-- PROBLEM : Rows -->
+  <section class="section section--wide" id="problems" aria-labelledby="problems-heading">
     <div class="container">
-      <div class="section__header reveal">
-        <p class="section__tag">The Problem</p>
-        <h2 class="section__title" id="problems-heading">Sound familiar?</h2>
+      <div class="head-block">
+        <h2 id="problems-heading">Where the hours disappear</h2>
       </div>
-      <div class="pain-grid">
-        <div class="pain-card reveal" data-stagger="0">
-          <div class="pain-card__icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <h3>Hours lost to repetitive tasks</h3>
-          <p>Copy-pasting between spreadsheets, manually updating records, sending the same emails: your team spends more time on process than on the actual work.</p>
+      <div class="rows">
+        <div class="rows__row">
+          <h3>Repetitive tasks</h3>
+          <p>Copy-pasting between spreadsheets, updating records by hand, sending the same emails. Your team spends more time on process than on the work itself.</p>
         </div>
-        <div class="pain-card reveal" data-stagger="1">
-          <div class="pain-card__icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h2m2 0h2m2 0h2"/><path d="M7 12h10"/></svg>
-          </div>
-          <h3>Scattered tools, zero integration</h3>
-          <p>Your CRM doesn't talk to your invoicing. Your project tracker lives in a spreadsheet. Nothing connects, so context gets lost between every handoff.</p>
+        <div class="rows__row">
+          <h3>Disconnected tools</h3>
+          <p>Your CRM doesn&rsquo;t talk to your invoicing. Your project tracker lives in a spreadsheet. Context gets lost at every handoff.</p>
         </div>
-        <div class="pain-card reveal" data-stagger="2">
-          <div class="pain-card__icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Growing pains without a dev team</h3>
-          <p>You need custom solutions but can't justify a full engineering hire. Off-the-shelf SaaS almost fits, but "almost" means workarounds everywhere.</p>
+        <div class="rows__row">
+          <h3>No dev team to call</h3>
+          <p>Off-the-shelf software almost fits, and &ldquo;almost&rdquo; means workarounds everywhere. A full engineering hire is hard to justify for one tool.</p>
         </div>
-        <div class="pain-card reveal" data-stagger="3">
-          <div class="pain-card__icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
-          </div>
-          <h3>AI hype, no clear starting point</h3>
-          <p>Everyone says "use AI," but nobody shows you where it actually fits your business. You need someone who understands operations, not just the technology.</p>
+        <div class="rows__row">
+          <h3>AI hype, no starting point</h3>
+          <p>Everyone says &ldquo;use AI.&rdquo; Nobody shows you where it fits your business. You need someone who understands operations, not just the technology.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section section--alt" id="services" aria-labelledby="services-heading">
+  <!-- SERVICES : Grid, hairline-divided, no cards -->
+  <section class="section section--band" id="services" aria-labelledby="services-heading">
     <div class="container">
-      <div class="section__header reveal">
-        <p class="section__tag">What I Do</p>
-        <h2 class="section__title" id="services-heading">Services built for <span class="gradient-text">real businesses</span></h2>
+      <div class="head-block">
+        <h2 id="services-heading">Three ways I take work off your plate</h2>
       </div>
-      <div class="services-grid">
-        <div class="service-card reveal" data-stagger="0">
-          <div class="service-card__number" aria-hidden="true">01</div>
-          <h3>AI Workflow Automation</h3>
-          <p>I identify your most time-consuming manual processes and automate them: from data entry and document processing to customer communications and reporting.</p>
-          <ul class="service-card__list" aria-label="AI Workflow Automation includes">
-            <li>Email &amp; document automation</li>
-            <li>Data extraction &amp; entry</li>
-            <li>Automated reporting dashboards</li>
+      <div class="cols">
+        <div class="cols__item">
+          <h3>1. AI workflow automation</h3>
+          <p>I find your most time-consuming manual processes and automate them: data entry, document processing, customer replies, reporting.</p>
+          <ul>
+            <li>Email and document automation</li>
+            <li>Data extraction and entry</li>
+            <li>Automated reporting</li>
             <li>AI-assisted customer responses</li>
           </ul>
         </div>
-        <div class="service-card reveal" data-stagger="1">
-          <div class="service-card__number" aria-hidden="true">02</div>
-          <h3>Custom Tool Building</h3>
-          <p>Off-the-shelf doesn't fit? I build lightweight, tailored tools that slot into your existing workflow: dashboards, admin portals, client-facing apps.</p>
-          <ul class="service-card__list" aria-label="Custom Tool Building includes">
+        <div class="cols__item">
+          <h3>2. Custom tool building</h3>
+          <p>Off-the-shelf doesn&rsquo;t fit? I build lightweight, tailored tools that slot into your existing workflow.</p>
+          <ul>
             <li>Internal operations tools</li>
-            <li>Client portals &amp; dashboards</li>
+            <li>Client portals and dashboards</li>
             <li>Integration middleware</li>
             <li>Mobile-friendly web apps</li>
           </ul>
         </div>
-        <div class="service-card reveal" data-stagger="2">
-          <div class="service-card__number" aria-hidden="true">03</div>
-          <h3>Process Audit &amp; Strategy</h3>
-          <p>Before building anything, I map your operations end-to-end. You get a clear roadmap of what to automate first for maximum ROI, with no wasted spend.</p>
-          <ul class="service-card__list" aria-label="Process Audit and Strategy includes">
+        <div class="cols__item">
+          <h3>3. Process audit and strategy</h3>
+          <p>Before building anything, I map your operations end to end, so you know what to automate first for the best return.</p>
+          <ul>
             <li>Operations workflow mapping</li>
             <li>Automation opportunity scoring</li>
             <li>Technology stack advisory</li>
@@ -176,162 +155,110 @@
     </div>
   </section>
 
-  <!-- RESULTS -->
-  <section class="section" id="results" aria-labelledby="results-heading">
+  <!-- RESULTS : Table -->
+  <section class="section section--tight" id="results" aria-labelledby="results-heading">
     <div class="container">
-      <div class="section__header reveal">
-        <p class="section__tag">Proof, Not Promises</p>
-        <h2 class="section__title" id="results-heading">Real <span class="gradient-text">results</span>, not case study fluff</h2>
-        <p class="section__lead">Client names stay private, but here's exactly what the work delivered.</p>
+      <div class="head-block">
+        <h2 id="results-heading">What two real automations produced</h2>
+        <p class="lead">Client names stay private. Here is exactly what the work delivered.</p>
       </div>
-      <div class="results-grid">
-        <div class="result-card reveal" data-stagger="0">
-          <p class="result-card__tag">Smart Home Solutions Provider</p>
-          <div class="result-card__metric">
-            <span class="result-card__before">Days</span>
-            <svg class="result-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            <span class="result-card__after">Minutes</span>
-          </div>
-          <p class="result-card__label">Customer inquiry → invoice, turnaround time</p>
-          <p class="result-card__desc">Built an admin portal to store product information plus a quotation tool, so a customer inquiry that used to take days to turn into an invoice now takes minutes.</p>
-        </div>
-        <div class="result-card reveal" data-stagger="1">
-          <p class="result-card__tag">Audit Firm</p>
-          <div class="result-card__metric">
-            <span class="result-card__before">3 Days</span>
-            <svg class="result-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            <span class="result-card__after">15 Min</span>
-          </div>
-          <p class="result-card__label">Weekly report production time</p>
-          <p class="result-card__desc">Automated the manual steps staff repeated every week to compile the final report. Rebuilt the process end-to-end so it now runs in about fifteen minutes.</p>
-        </div>
-      </div>
+      <p class="statement">Two real automations. No inflated metrics, no logo wall.</p>
+      <table class="results-table">
+        <thead>
+          <tr><th scope="col">Client</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">What changed</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Smart home solutions provider</th>
+            <td class="num">Days</td>
+            <td class="num result-table__after">Minutes</td>
+            <td>An admin portal plus a quotation tool: enquiry to invoice, without the manual lookup.</td>
+          </tr>
+          <tr>
+            <th scope="row">Audit firm</th>
+            <td class="num">3 days</td>
+            <td class="num result-table__after">15 min</td>
+            <td>Automated the exact manual steps staff repeated every week to compile the final report.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section" id="how" aria-labelledby="how-heading">
+  <!-- HOW IT WORKS : Steps, real ol -->
+  <section class="section section--band" id="how" aria-labelledby="how-heading">
     <div class="container">
-      <div class="section__header reveal">
-        <p class="section__tag">The Process</p>
-        <h2 class="section__title" id="how-heading">Three steps to <span class="gradient-text">less busywork</span></h2>
+      <div class="head-block">
+        <h2 id="how-heading">From audit to a shipped tool</h2>
       </div>
-      <div class="steps" role="list">
-        <div class="step reveal" role="listitem">
-          <div class="step__line" aria-hidden="true"></div>
-          <div class="step__dot" aria-hidden="true"></div>
-          <div class="step__content">
-            <span class="step__label">Step 1</span>
-            <h3>Audit</h3>
-            <p>I map your current workflows and pinpoint the biggest time sinks. You'll see exactly where automation has the highest return, with no guesswork.</p>
-          </div>
-        </div>
-        <div class="step reveal" role="listitem">
-          <div class="step__line" aria-hidden="true"></div>
-          <div class="step__dot" aria-hidden="true"></div>
-          <div class="step__content">
-            <span class="step__label">Step 2</span>
-            <h3>Build</h3>
-            <p>I design and ship the solution: whether that's an AI automation, a custom tool, or an integration between your existing systems. Fast, iterative, transparent.</p>
-          </div>
-        </div>
-        <div class="step reveal" role="listitem">
-          <div class="step__line" aria-hidden="true"></div>
-          <div class="step__dot" aria-hidden="true"></div>
-          <div class="step__content">
-            <span class="step__label">Step 3</span>
-            <h3>Launch &amp; Support</h3>
-            <p>I deploy, train your team, and stick around to make sure it works in the real world. Ongoing support so the automation keeps delivering value.</p>
-          </div>
-        </div>
-      </div>
+      <ol class="steps">
+        <li>
+          <h3>1. Audit</h3>
+          <p>I map your current workflows and pinpoint the biggest time sinks, so you see exactly where automation pays off first.</p>
+        </li>
+        <li>
+          <h3>2. Build</h3>
+          <p>I design and ship the solution, whether that&rsquo;s an automation, a custom tool, or an integration between your existing systems.</p>
+        </li>
+        <li>
+          <h3>3. Launch and support</h3>
+          <p>I deploy, train your team, and stay on to make sure it works in the real world, with support so it keeps delivering value.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- WHY GRND -->
-  <section class="section section--alt" id="why" aria-labelledby="why-heading">
+  <!-- WHY GRND : Rows -->
+  <section class="section section--wide" id="why" aria-labelledby="why-heading">
     <div class="container">
-      <div class="section__header reveal">
-        <p class="section__tag">Why Us</p>
-        <h2 class="section__title" id="why-heading">A builder, not just <span class="gradient-text">a consultant</span></h2>
+      <div class="head-block">
+        <h2 id="why-heading">Advice that ships as working software</h2>
       </div>
-      <div class="why-grid">
-        <div class="why-card reveal" data-stagger="0">
+      <div class="cols cols--2">
+        <div class="cols__item">
           <h3>Product manager who codes</h3>
-          <p>I don't just advise. I build. With a product management background and hands-on development experience, I understand both the business problem and the technical solution.</p>
+          <p>A product background plus hands-on development. I understand the business problem and I write the solution myself.</p>
         </div>
-        <div class="why-card reveal" data-stagger="1">
-          <h3>Built for SMEs, not enterprises</h3>
-          <p>No bloated proposals or six-month timelines. You get lean, fast solutions sized for your business, not scaled-down enterprise packages with enterprise pricing.</p>
+        <div class="cols__item">
+          <h3>Sized for SMEs</h3>
+          <p>Lean, fast solutions sized for your business, built in weeks on a scoped price, not a six-month enterprise timeline.</p>
         </div>
-        <div class="why-card reveal" data-stagger="2">
-          <h3>Pragmatic, not hype-driven</h3>
-          <p>AI isn't the answer to everything. I'll tell you where it fits and where a simpler tool is the better move. Honest advice, always.</p>
+        <div class="cols__item">
+          <h3>Pragmatic about AI</h3>
+          <p>I&rsquo;ll tell you where AI actually fits and where a simpler tool is the better move.</p>
         </div>
-        <div class="why-card reveal" data-stagger="3">
+        <div class="cols__item">
           <h3>You own everything</h3>
-          <p>No vendor lock-in, no proprietary platforms. Everything I build is yours: the code, the data, the documentation. Walk away any time.</p>
+          <p>The code, the data and the documentation are yours. No vendor lock-in, no proprietary platform. Walk away any time.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact" aria-labelledby="contact-heading">
+  <!-- CONTACT : Band -->
+  <section class="section section--dusk" id="contact" aria-labelledby="contact-heading">
     <div class="container">
-      <div class="section__header reveal">
-        <p class="section__tag">Get Started</p>
-        <h2 class="section__title" id="contact-heading">Let's find your <span class="gradient-text">quick wins</span></h2>
-        <p class="contact__lead">Free 30-minute discovery call. No pitch, no pressure, just an honest look at where automation can save your team the most time.</p>
+      <div class="head-block">
+        <h2 id="contact-heading">Let&rsquo;s find your quick wins</h2>
+        <p class="lead">Free 30-minute discovery call. An honest look at where automation saves your team the most time.</p>
       </div>
 
-      <div class="contact-wrapper reveal">
+      <div class="contact-split">
 
-        <!-- Book a call -->
-        <div class="contact-book">
+        <div class="contact-split__text">
           <h3>Message me directly</h3>
-          <p>Drop me a WhatsApp and I'll set up a time. I'll walk through your operations and identify exactly where to start.</p>
-          <a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg btn--cal">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.886-9.885 9.886m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/></svg>
-            Chat on WhatsApp
-          </a>
-          <ul class="contact-book__meta" aria-label="Call details">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <span>30-minute call</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-              <span>Video call</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Free, no commitment</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 11 3.83V3H3v8h.83l9.58 9.59a2 2 0 0 0 2.83 0l4.35-4.35a2 2 0 0 0 0-2.83Z"/><circle cx="6.5" cy="6.5" r="1"/></svg>
-              <span>Scoped pricing, quote upfront (no hourly surprises)</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Based in Malaysia, working with SMEs nationwide</span>
-            </li>
+          <p>Drop a WhatsApp and I&rsquo;ll set up a time to walk through your operations.</p>
+          <a href="https://wa.me/60126274178?text=Hi%20GRND%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20discovery%20call%20about%20automating%20my%20business." target="_blank" rel="noopener noreferrer" class="btn" style="width:100%; margin-bottom: var(--space-lg);">Chat on WhatsApp</a>
+          <ul class="facts">
+            <li>30-minute call, video, free</li>
+            <li>Scoped pricing, quote upfront, no hourly surprises</li>
+            <li>Based in Malaysia, working with SMEs nationwide</li>
           </ul>
-          <div class="contact-book__email">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            <a href="mailto:notification@staygrnd.xyz">notification@staygrnd.xyz</a>
-          </div>
+          <p class="contact-split__email"><a href="mailto:notification@staygrnd.xyz">notification@staygrnd.xyz</a></p>
         </div>
 
-        <!-- Divider -->
-        <div class="contact-divider" aria-hidden="true">
-          <span>or</span>
-        </div>
-
-        <!-- Contact form -->
         <form class="contact-form" id="contactForm" novalidate aria-label="Send a message">
           <div id="formStatus" role="status" aria-live="polite" aria-atomic="true" class="form-status"></div>
-          <!-- Honeypot: hidden from humans, bots fill it in and get rejected -->
           <input type="checkbox" name="botcheck" id="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-group">
             <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
@@ -344,12 +271,12 @@
             <span class="form-error" id="email-error" role="alert"></span>
           </div>
           <div class="form-group">
-            <label for="message">What's your biggest operational headache? <span class="required" aria-hidden="true">*</span></label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us about the manual work you'd love to eliminate..." required aria-required="true" aria-describedby="message-error"></textarea>
+            <label for="message">What&rsquo;s your biggest operational headache? <span class="required" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell me about the manual work you&rsquo;d love to eliminate" required aria-required="true" aria-describedby="message-error"></textarea>
             <span class="form-error" id="message-error" role="alert"></span>
           </div>
-          <button type="submit" class="btn btn--primary btn--lg btn--full">Send Message</button>
-          <p class="form-note">No spam. I'll only use this to follow up about your inquiry, in line with Malaysia's Personal Data Protection Act. See the <a href="privacy.html">privacy notice</a>.</p>
+          <button type="submit" class="btn" style="width:100%;">Send message</button>
+          <p class="form-note">No spam. Used only to follow up on your inquiry, under Malaysia&rsquo;s Personal Data Protection Act. See the <a href="privacy.html">privacy notice</a>.</p>
         </form>
 
       </div>
@@ -361,10 +288,7 @@
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container footer__inner">
-      <div class="footer__brand">
-        <a href="#hero" class="nav__logo" aria-label="Back to top">GRND<span class="nav__logo-dot">.</span></a>
-        <p>AI automation consulting for small and mid-size businesses across Malaysia.</p>
-      </div>
+      <a href="#hero" class="nav__logo footer__logo" aria-label="Back to top">GRND<span class="nav__logo-dot">.</span></a>
       <nav class="footer__links" aria-label="Footer navigation">
         <a href="#services">Services</a>
         <a href="#how">Process</a>
@@ -373,12 +297,12 @@
         <a href="#contact">Contact</a>
         <a href="privacy.html">Privacy</a>
       </nav>
-      <div class="footer__bottom">
-        <p>&copy; <span id="footerYear">2025</span> GRND Consulting. All rights reserved.</p>
-      </div>
+      <p class="footer__legal">AI automation consulting for small and mid-size businesses across Malaysia. &copy; <span id="footerYear">2025</span> GRND Consulting.</p>
+      <p class="footer__credits" data-credits>Photograph: <a href="https://commons.wikimedia.org/wiki/File:Vallee-brouillard.jpg">Thomas Bresson</a>, CC BY 3.0, Wikimedia Commons.</p>
     </div>
   </footer>
 
+  <script>document.documentElement.classList.add('js');</script>
   <script src="script.js"></script>
 </body>
 </html>
